@@ -1,3 +1,13 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }  
+
 .page, .wrapper, .header, .block_1, .block_2, .footer {
     margin: 0;
     padding: 0;
@@ -6,7 +16,7 @@
 
 .page {
     max-width: 1920px;
-    min-height: 1000px;
+    min-height: 1000px;   
 }
 
 .wrapper {
@@ -15,6 +25,9 @@
     margin: 0 auto;
     background: #C0DBD9;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .header {
@@ -22,6 +35,102 @@
     min-height: 100px;
     margin: 0 auto;
     background: #7FAFF6;
+}
+
+.button_pop_up {
+    width: 206px;
+    height: 39px;
+    background: #A5C7F9;
+    border-radius: 5px;
+    border: none;
+    margin-left: 30px;
+    margin-top: 30.5px;
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.button_pop_up:hover {
+    background: #0D89B0;
+}
+
+.popup, .popup_checkbox {
+    display: none;
+}
+  
+.popup {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.pop_up_text {
+    font-size: 53px;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: 169px;
+    margin-left: 117px;
+}
+  
+.popup:before {
+    display: block;
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .5;   
+}
+
+.popup_content {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.popup_closer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #7FAFF6;
+    display: block;
+    width: 13px;
+    height: 23px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    padding: 8px 15px 8px 15px;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+.popup_closer:hover {
+    background-color: rgba(230, 49, 49, 0.767);
+}
+
+.popup_checkbox:checked + .popup {
+    opacity: 1;
+    display: block;
 }
 
 .block_1 {
@@ -45,6 +154,69 @@
     align-items: flex-start;
 }
 
+.one {
+    width: 33.3%;
+    height: 198px;    
+    background: #8AD191;
+    background-image: url('../svg/1.svg');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+}    
+
+.two {
+    width: 50.4%;
+    height: 198px;
+    background: #8AD191;
+    background-image: url('../svg/2.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center;
+}
+
+.three {
+    width: 13.7%;
+    height: 198px;
+    background: #8AD191;
+    background-image: url('../svg/3.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center;
+}
+
+.four {
+    width: 85%;
+    height: 198px;
+    background: #8AD191;
+    background-image: url('../svg/4.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center;
+}
+
+.five {
+    width: 13.7%;
+    height: 198px;
+    background: #8AD191;
+    background-image: url('../svg/5.svg');
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center;
+}
+
+.item_responsive {
+    background: #0D89B0;
+    position: relative;
+    width: 21.8%;
+    margin: 30px 0;
+    padding-top: 17%; /* (199 / 255) * 21.8 % */
+}
+
+.item_responsive:before {
+    display: block;
+    content: "";    
+}
+
 .footer {
     width: 100%;
     min-height: 100px;
@@ -53,46 +225,4 @@
     background: #7FAFF6;
 }
 
-.one {
-    width: 33.3%;
-    height: 198px;
-    background: #8AD191;
-}
-
-.two {
-    width: 50.4%;
-    height: 198px;
-    background: #8AD191;
-}
-
-.three {
-    width: 13.7%;
-    height: 198px;
-    background: #8AD191;
-}
-
-.four {
-    width: 85%;
-    height: 198px;
-    background: #8AD191;
-}
-
-.five {
-    width: 13.7%;
-    height: 198px;
-    background: #8AD191;
-}
-
-.item-responsive {
-    background: #0D89B0;
-    position: relative;
-    width: 21.8%;
-    margin: 30px 0;
-    padding-top: 17%; /* (199 / 255) * 21.8 % */
-}
-
-.item-responsive:before {
-    display: block;
-    content: "";    
-}
 
